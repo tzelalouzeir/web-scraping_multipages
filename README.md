@@ -1,15 +1,15 @@
-# scrapping multi-pages with bs4
+# scraping multi-pages with bs4
 
-As mentioned in last [repo web-scrapping with bs4](https://github.com/tzelalouzeir/web-scrapping_bs4). Let's  upgrade it.
+As mentioned in last [repo web-scraping with bs4](https://github.com/tzelalouzeir/web-scraping_bs4). Let's  upgrade it.
 
 ## To do
 - use the same method
 - selecting 1-6 pages
-- finding prices, names, links, how many stores have gpu between 1-6 pages and which classes belong in HTML code
-## Some issues
-- pages suggest gpus and we don't want them
-- need to add site link in the end of ```links```
-- need clear data (only *ENGLISH*)
+- finding prices, names, links, how many stores have GPU between 1-6 pages and which classes belong in ```HTML``` code
+## Some problems, easy to fix
+- pages suggest GPUs and we don't want them **(done)**
+- need to add site link in the end of ```links``` **(done)**
+- need clear data (only *ENGLISH*) **(done)**
 - sometime site changing ```HTML``` code for this reason its necessary to fix code 
 
 
@@ -39,7 +39,7 @@ link_data=[]
 market_data=[]
 
 
-# created only for 6 pages if you want to add more please (i think i dont need to create new if  elif conditions)
+# created only for 6 pages if you want to add more please (i think i don't need to create new if  elif conditions)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 1-6 Pages~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -54,11 +54,11 @@ market_data=[]
 
 
 
-#creating class for clearing if there is any gpu suggestion in pages
+#creating class for clearing if there is any GPU suggestion in pages
 class suggestion:
     def solve(self, nums):
         
-        # if has 3 GPU suggestion in 6 page (25 gpus first page + 3 suggestion =28, delete between 25-28)
+        # if has 3 GPU suggestion in 6 page (25 GPUs first page + 3 suggestion =28, delete between 25-28)
         if len(nums) == 168: 
             del nums[25:28:1]                   #1 page
             del nums[50:53:1]                   #2 page
@@ -67,7 +67,7 @@ class suggestion:
             del nums[125:128:1]                 #5 page
             del nums[150:153:1]                 #6 page
             
-        # if has 4 GPU suggestion in 6 page 25 gpus first page + 4 suggestion =29, delete between 25-29)    
+        # if has 4 GPU suggestion in 6 page 25 GPUs first page + 4 suggestion =29, delete between 25-29)    
         elif len(nums) == 174: 
             del nums[25:29:1]                   #1 page 
             del nums[50:54:1]                   #2 page
@@ -143,7 +143,7 @@ print("Market Lenght:",len(m))
 |...|...|...|...|
 
 ## Upgrade code
-We will work little bit different. Collected every data on 1-6 pages with different names(even name was twice in data but with different price), prices and links.
+We will work little bit different. Collected every data on 1-6 pages with different names(even name was twice in data but with different price), prices and links. Now collect every GPUs variables. For example, there can be different 4 RTX 3060ti and we will add them in our data, it's like a **matryoshka baby**. Scrap the scrap. 
 - add on data new variables such as ```delivery in``` ```shipping cost``` ```store names```
 - translating every Greek words
 #### Issues  
