@@ -123,7 +123,7 @@ for page in pages:
 # Saving results to CSV file 
 with open("pages/page1-6.csv", "w", encoding='utf-8',newline='') as csvfile:
     writer = csv.writer(csvfile)
-    header = ['Titles','Prices','Links','Market']
+    header = ['Titles','Prices','Links','in Market']
     writer.writerow(header)
     for value in range(len(t)):
         writer.writerow([t[value], p[value], mylist[value], m[value]])
@@ -134,8 +134,8 @@ print("Price Lenght:",len(p))
 print("Link Lenght:",len(mylist))
 print("Market Lenght:",len(m))
 ```
-## Result
-|Titles |Prices|Links|Market|
+## Results
+|Titles |Prices|Links|in Market|
 |-------|------|-----|------|
 |Asus Quadro A100 80GB|18.490,00€|https://www.bestprice.gr/item/2157981385/asus-quadro-a100-80gb.html|Σε 1 κατάστημα|
 |Asus Quadro A100 40GB|12.188,00€|https://www.bestprice.gr/item/2157981387/asus-quadro-a100-40gb.html|Σε 1 κατάστημα|
@@ -207,6 +207,78 @@ Adding website front of ```mylist_gpu```
     for idx in range(len(ll)):
          mylist_gpu[idx] = "https://www.bestprice.gr" + mylist_gpu[idx]
 ```
+Clearing ```m_name_data``` 
+```python
+def Convert(string):
+    li = list(string.split(" "))
+    return li
+
+# collecting market names list to string and string to list
+list_m_name_data = list(m_name_data)
+str_m_name_data = ' '.join(str(e) for e in list_m_name_data)
+
+#market names
+s = str_m_name_data
+full_m_name=[]
+remove_head = re.sub('/m/.*?/', '', s)
+remove_end = re.sub('\.*?html','',remove_head)
+full_m_name.append(remove_end)
+
+list_m_name_data1 = list(full_m_name)
+str_m_name_data2 = ' '.join(str(e) for e in list_m_name_data1)
+
+
+# Driver code    
+str_m_name_data3 = str_m_name_data2
+real_full= Convert(str_m_name_data3)
+```
+```python
+# removing greek characters and put them english words
+strings = order_gpu
+shipping_str = shipping_gpu
+days410='Παράδοση σε 4 - 10 ημέρες'
+days814='Παράδοση σε 8 - 14 ημέρες'
+days13='Παράδοση σε 1 - 3 ημέρες'
+online= 'Άμεσα διαθέσιμο'
+uponorder='Κατόπιν παραγγελίας'
+shipping_gr='Μεταφορικά'
+free_gr = 'Δωρεάν'
+
+
+
+delivery_en = []
+shipping_en = []
+
+for i in shipping_str:
+    ship = (i.replace(shipping_gr," Shipping").replace(free_gr,"Free"))
+    shipping_en.append(ship)
+
+for string in strings:
+    
+    new_string = (string.replace(days410,"Delivery in 4 - 10 days").replace(days814,"Delivery in 8 - 14 days").replace(days13,"Delivery in 1- 3 days").replace(online,"Online").replace(uponorder,"Upon Order"))
+    delivery_en.append(new_string)
+```
+saving our data as .csv
+```python
+with open("gpu/1-6page_everyGPUs.csv", "w", encoding='utf-8',newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    header = ['Titles','Prices','Links','Delivery In','Shipping Cost','Market Names']
+    writer.writerow(header)
+    for value in range(len(title_gpu)):
+        writer.writerow([title_gpu[value], price_gpu[value], mylist_gpu[value], delivery_en[value], shipping_en[value], real_full[value]])
+```
+
+## Result
+|Titles |Prices|Links|Delivery In|Shipping Cost|Market Names|
+|-------|------|-----|------|------|------|
+|Asus Quadro A100 80GB|18.490,0|https://www.bestprice.gr/to/104226352/asus-nvidia-a100-80gb-300w-pciegen4.html?ct=2Ny9An-3VFCHW-82vJQ,fW7CXm9daM7&from=&seq=1&bpref=itemPage|Delivery in 4 - 10 days|+ 5,00€ Shipping|A-Center|
+|Asus Quadro A100 40GB|12.188,0|https://www.bestprice.gr/to/104226356/asus-nvidia-a100-40gb-250w-pciegen4.html?from=&seq=1&bpref=itemPage|Delivery in 4 - 10 days|+ 5,00€ Shipping|A-Center|
+|HP Quadro GV100 32GB|11.245,0|https://www.bestprice.gr/to/51881672/hp-nvidia-quadro-gv100-32gb-pcie-3me26aa.html?from=&seq=1&bpref=itemPage|Upon Order|Free Shipping|Msystems|
+|...|...|...|...|...|...|
+|PNY Quadro RTX 8000 Passive|7.718,00|https://www.bestprice.gr/to/66268420/pny-quadro-rtx-8000-passive.html?from=&seq=1&bpref=itemPage|Delivery in 4 - 10 days|+ 5,00€ Shipping|Homelike|
+|...|...|...|...|...|...|
+
+
 
 #### Issues need to fix
 - we can see some different symbols on prices such as *741,76€Δ*,  *871,00€+* or *18.490,0* 
