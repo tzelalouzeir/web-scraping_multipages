@@ -135,11 +135,11 @@ print("Link Lenght:",len(mylist))
 print("Market Lenght:",len(m))
 ```
 ## Result
-	|Titles|	Prices|	Links|	Market|
-    |:-----:|:-----:|:-----:|:-----:|
-	|Asus Quadro A100 80GB	|18.490,00€	|https://www.bestprice.gr/item/2157981385/asus-quadro-a100-80gb.html|	Σε 1 κατάστημα|
-	|Asus Quadro A100 40GB	|12.188,00€	|https://www.bestprice.gr/item/2157981387/asus-quadro-a100-40gb.html|	Σε 1 κατάστημα|
-	|HP Quadro GV100 32GB	|11.245,00€	|https://www.bestprice.gr/item/2155993929/hp-quadro-gv100-32gb.html|	Σε 1 κατάστημα|
+	|Titles |Prices|Links|Market|
+    	|-------|------|-----|------|
+	|Asus Quadro A100 80GB|18.490,00€|https://www.bestprice.gr/item/2157981385/asus-quadro-a100-80gb.html|Σε 1 κατάστημα|
+	|Asus Quadro A100 40GB|12.188,00€|https://www.bestprice.gr/item/2157981387/asus-quadro-a100-40gb.html|Σε 1 κατάστημα|
+	|HP Quadro GV100 32GB|11.245,00€|https://www.bestprice.gr/item/2155993929/hp-quadro-gv100-32gb.html|Σε 1 κατάστημα|
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
