@@ -9,8 +9,8 @@ As mentioned in last [repo web-scrapping with bs4](https://github.com/tzelalouze
 ## Some issues
 - pages suggest gpus and we don't want them
 - need to add site link in the end of ```links```
-- need clear data (only ENGLISH)
-- sometime site changing HTML code for this reason its necessary to fix code 
+- need clear data (only *ENGLISH*)
+- sometime site changing ```HTML``` code for this reason its necessary to fix code 
 
 
 
@@ -141,6 +141,15 @@ print("Market Lenght:",len(m))
 |Asus Quadro A100 40GB|12.188,00€|https://www.bestprice.gr/item/2157981387/asus-quadro-a100-40gb.html|Σε 1 κατάστημα|
 |HP Quadro GV100 32GB|11.245,00€|https://www.bestprice.gr/item/2155993929/hp-quadro-gv100-32gb.html|Σε 1 κατάστημα|
 |...|...|...|...|
+
+## Upgrade code
+We will work little bit different. Collected every data on 1-6 pages with different names(even name was twice in data but with different price), prices and links.
+- add on data new variables such as ```delivery in``` ```shipping cost``` ```store names```
+- translating every Greek words
+#### Issues  
+- we can see some different symbols on prices such as *741,76€Δ*,  *871,00€+* or *18.490,0* 
+- some stores can be written Greek
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
