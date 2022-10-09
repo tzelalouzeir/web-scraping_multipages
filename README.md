@@ -277,8 +277,8 @@ with open("gpu/1-6page_everyGPUs.csv", "w", encoding='utf-8',newline='') as csvf
 |...|...|...|...|...|...|
 |PNY Quadro RTX 8000 Passive|7.718,00|[https://www.bestprice.gr/to/51881672/hp-nvidia-qua](https://www.bestprice.gr/to/66268420/pny-quadro-rtx-8000-passive.html?from=&seq=1&bpref=itemPage) |Delivery in 4 - 10 days|+ 5,00€ Shipping|Homelike|
 |...|...|...|...|...|...|
-|SAPPHIRE TOXIC RADEON RX 6900 XT 16GB GAMING GDDR6 OC AIR COOLED UEFI|855,07€+|[https://www.bestprice.gr/to/83703606/sapphi](https://www.bestprice.gr/to/83703606/sapphire-toxic-radeon-rx-6900-xt-16gb-gaming-gddr6-oc-air-cooled-uefi.html?from=&seq=3&bpref=itemPage) |Delivery in 4 - 10 days|+ 4,50€ Shipping|JMCtech|
-|Gigabyte Radeon RX 6600 XT GAMING OC PRO 8G - graphics card - Radeon RX 6600 XT - 8 GB|820,00€Δ| [https://www.bestprice.gr/to/104145839/giga](https://www.bestprice.gr/to/104145839/gigabyte-radeon-rx-6600-xt-gaming-oc-pro-8g-graphics-card-radeon-rx-6600-xt-8-gb.html?from=&seq=8&bpref=itemPage) |Delivery in 4 - 10 days|Free Shipping|Κωτσόβολος|
+|SAPPHIRE TOXIC RADEON RX 6900 XT 16GB ...|855,07€+|[https://www.bestprice.gr/to/83703606/sapphi](https://www.bestprice.gr/to/83703606/sapphire-toxic-radeon-rx-6900-xt-16gb-gaming-gddr6-oc-air-cooled-uefi.html?from=&seq=3&bpref=itemPage) |Delivery in 4 - 10 days|+ 4,50€ Shipping|JMCtech|
+|Gigabyte Radeon RX 6600 XT ...|820,00€Δ| [https://www.bestprice.gr/to/104145839/giga](https://www.bestprice.gr/to/104145839/gigabyte-radeon-rx-6600-xt-gaming-oc-pro-8g-graphics-card-radeon-rx-6600-xt-8-gb.html?from=&seq=8&bpref=itemPage) |Delivery in 4 - 10 days|Free Shipping|Κωτσόβολος|
 
 
 #### Issues need to fix
