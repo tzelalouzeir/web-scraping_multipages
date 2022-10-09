@@ -287,9 +287,9 @@ with open("gpu/1-6page_everyGPUs.csv", "w", encoding='utf-8',newline='') as csvf
 
 ## Score
 Execution time: 5.923 minutes
-sys: kali-linux
-cpu: Intel Celeron N2840
-ram: 2GB
+- sys: kali-linux
+- cpu: Intel Celeron N2840
+- ram: 2GB
 
 
 ## Contributing
