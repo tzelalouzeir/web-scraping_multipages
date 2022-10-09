@@ -285,6 +285,12 @@ with open("gpu/1-6page_everyGPUs.csv", "w", encoding='utf-8',newline='') as csvf
 - we can see some different symbols on prices such as *741,76€Δ*,  *871,00€+* or *18.490,0* 
 - some stores can be written Greek
 
+## Score
+Execution time: 5.923 minutes
+sys: kali-linux
+cpu: Intel Celeron N2840
+ram: 2GB
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
