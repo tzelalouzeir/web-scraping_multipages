@@ -143,10 +143,72 @@ print("Market Lenght:",len(m))
 |...|...|...|...|
 
 ## Upgrade code
-We will work little bit different. Collected every data on 1-6 pages with different names(even name was twice in data but with different price), prices and links. Now collect every GPUs variables. For example, there can be different 4 RTX 3060ti and we will add them in our data, it's like a **matryoshka baby**. Scrap the scrap. 
+We will work little bit different. Collected every data on 1-6 pages with different names(even name was twice in data but with different price), prices and links. Now collect every GPUs variables. For example, there can be different 4 RTX 3060ti and we will add them in our data, it's like a **matryoshka babies**. Scrap the scrap :D 
 - add on data new variables such as ```delivery in``` ```shipping cost``` ```store names```
 - translating every Greek words
-#### Issues  
+
+```python
+# Finding All gpus in upper code and saving in one csv, 
+
+url_gpu = l
+
+title_gpu=[]
+price_gpu=[]
+link_gpu=[]
+order_gpu=[]
+shipping_gpu=[]
+m_name_data=[]
+
+for i in url_gpu:
+    url_s = f"https://www.bestprice.gr{i}"
+    req = Request(url_s , headers={'User-Agent': 'Mozilla/5.0'})
+    webpage = urlopen(req).read()
+    soup = bs(webpage, "lxml")
+    
+    
+    # specify which column will be scraped in html code
+    lists_gpu = soup.find_all('div',attrs={'class':'prices__group'})
+    
+    # using for loop for getting all information that we want
+    for i in lists_gpu:
+        t_gpu = i.find('div', attrs={'class':'prices__title'}).text
+        p_gpu = i.find('div', attrs={'class':'prices__price'}).text[:8]
+        title_gpu.append(t_gpu)
+        price_gpu.append(p_gpu)
+        
+    # delivery in    
+    for u in soup.select('div.prices__props'):
+        order = u.find('small').text
+        order_gpu.append(order)
+        
+    # shipping cost
+    for u in soup.select('div.product__costs'):
+        shipping = u.find('div').text
+        shipping_gpu.append(shipping)
+        
+    # market name    
+    for u in soup.select('div.prices__merchant'):
+        m_name = u.find('em').text
+        m_name_data.append(m_name)
+        
+    # links
+    for u in soup.select('div.prices__main'):
+        link_g = u.find('a')['href']
+        link_gpu.append(link_g)
+        
+    # deleting extra links, calculating with title_gpu    
+    for a in range(len(title_gpu)):
+        ll = link_gpu
+        del ll[len(title_gpu):]
+```
+Adding website front of ```mylist_gpu```
+```python
+    mylist_gpu = ll
+    for idx in range(len(ll)):
+         mylist_gpu[idx] = "https://www.bestprice.gr" + mylist_gpu[idx]
+```
+
+#### Issues need to fix
 - we can see some different symbols on prices such as *741,76€Δ*,  *871,00€+* or *18.490,0* 
 - some stores can be written Greek
 
