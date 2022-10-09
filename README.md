@@ -58,7 +58,7 @@ market_data=[]
 class suggestion:
     def solve(self, nums):
         
-        # if has 3 GPU suggestion in 6 page
+        # if has 3 GPU suggestion in 6 page (25 gpus first page + 3 suggestion =28, delete between 25-28)
         if len(nums) == 168: 
             del nums[25:28:1]                   #1 page
             del nums[50:53:1]                   #2 page
@@ -67,7 +67,7 @@ class suggestion:
             del nums[125:128:1]                 #5 page
             del nums[150:153:1]                 #6 page
             
-        # if has 4 GPU suggestion in 6 page    
+        # if has 4 GPU suggestion in 6 page 25 gpus first page + 4 suggestion =29, delete between 25-29)    
         elif len(nums) == 174: 
             del nums[25:29:1]                   #1 page 
             del nums[50:54:1]                   #2 page
