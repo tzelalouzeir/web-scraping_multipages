@@ -1,4 +1,5 @@
 # scraping multi-pages with bs4
+This code is a web scraper that collects data on graphics cards from the website https://www.bestprice.gr. It uses the requests and BeautifulSoup libraries to make an HTTP request to the website and parse the resulting HTML to extract the relevant information. The information collected includes the title, price, and link for each graphics card, as well as the market it is being sold on. The code also includes a suggestion class that is used to remove any GPU suggestions that may appear in the pages of results. The number of pages to scrape is determined by the pages variable, which is set to an array of numbers from 1 to 6 in this code.
 
 As mentioned in last [repo web-scraping with bs4](https://github.com/tzelalouzeir/web-scraping_bs4). Let's  upgrade it.
 
